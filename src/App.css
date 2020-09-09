@@ -1,38 +1,114 @@
-.App {
+/* @import "Responsive.module.scss"; */
+@import "Grid.css";
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+#root {
+  background-color: #f2f2f2;
+}
+
+.pl {
+  padding-left: 5px;
+}
+
+.pr {
+  padding-right: 5px;
+}
+
+.pt {
+  padding-top: 5px;
+}
+
+.pb {
+  padding-bottom: 5px;
+}
+
+.px {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.py {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.px-2 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.py-2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ml {
+  margin-left: 5px;
+}
+
+.mr {
+  margin-right: 5px;
+}
+
+.mt {
+  margin-top: 5px;
+}
+
+.mb {
+  margin-bottom: 5px;
+}
+
+.mx {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.my {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.box-white {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.mission-box {
+  max-width: 256px;
+  margin: 0 auto;
+}
+
+.text-center {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-left {
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.launh-title {
+  color: #4e5998;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mission-value {
+  color: #7179ae;
+}
+
+.mission-patch {
+  max-width: 100%;
+  background-color: #f2f2f2;
+}
+
+.mission-ul {
+  margin: 0;
+}
+
+.flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
