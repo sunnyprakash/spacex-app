@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 
-const Launch = (props) => {
+const Launch = React.memo((props) => {
   return (
     <div className="col-sm-12 col-md-8 col-lg-10">
       <div className="row">
@@ -71,6 +71,6 @@ const Launch = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default Launch;

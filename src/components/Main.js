@@ -2,7 +2,7 @@ import React from "react";
 import Launch from "./Launch";
 import Filters from "./Filters";
 
-const MainContainer = (props) => {
+const MainContainer = React.memo((props) => {
   return (
     <React.Fragment>
       <div className="row">
@@ -37,6 +37,6 @@ const MainContainer = (props) => {
       </div>
     </React.Fragment>
   );
-};
+});
 
 export default MainContainer;

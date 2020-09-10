@@ -10,7 +10,6 @@ const MainContainer = (props) => {
     { id: "true", label: "True" },
     { id: "false", label: "False" },
   ];
-  let [filters, setFilters] = useState({});
 
   const getUrlParams = () => {
     let queryParams = new URL(window.location.href).searchParams;
@@ -22,19 +21,16 @@ const MainContainer = (props) => {
         params[FILTER_LIST[key]] = value;
       }
     }
-    setFilters(params);
+    return params;
   };
-
-  useEffect(() => {
-    getUrlParams();
-  }, []);
+  let [filters, setFilters] = useState(getUrlParams());
 
   for (let i = 2006; i <= 2020; i++) {
     launchYearList.push(i);
   }
 
-  const getData = (params = "") => {
-    fetch(`https://api.spaceXdata.com/v3/launches?limit=100${params}`)
+  const getData = async (params = "") => {
+    await fetch(`https://api.spaceXdata.com/v3/launches?limit=100${params}`)
       .then((response) => response.json())
       .then((data) => setInitialData(data))
       .catch((error) => {
@@ -51,7 +47,7 @@ const MainContainer = (props) => {
     }));
   };
 
-  const getFilteredData = () => {
+  const getFilteredData = async () => {
     let params = "";
     for (let key in filters) {
       params = `${params}&${key}=${filters[key]}`;
@@ -63,7 +59,7 @@ const MainContainer = (props) => {
       `${params === "" ? "/" : "/?" + params.substring(1)}`
     );
 
-    getData(params);
+    await getData(params);
   };
 
   useEffect(() => {

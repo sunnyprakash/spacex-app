@@ -2,7 +2,7 @@ import React from "react";
 import "./Filters.css";
 import { FILTER_LIST } from "../constants/Constants";
 
-const Filters = (props) => {
+const Filters = React.memo((props) => {
   return (
     <div className="col-sm-12 col-md-4 col-lg-2 py-2">
       <div className="filters box-white text-center">
@@ -23,6 +23,7 @@ const Filters = (props) => {
                       ? "active"
                       : ""
                   }`}
+                  aria-label={`Launch Year ${year}`}
                   type="button"
                   name="launch_year"
                   onClick={(e) => props.onClickHandler(e, year)}
@@ -45,6 +46,7 @@ const Filters = (props) => {
                     ? "active"
                     : ""
                 }`}
+                aria-label={`Successful Launch ${state.id}`}
                 type="button"
                 name="launch_success"
                 onClick={(e) => props.onClickHandler(e, state.id)}
@@ -67,6 +69,7 @@ const Filters = (props) => {
                     ? "active"
                     : ""
                 }`}
+                aria-label={`Successful Landing ${state.id}`}
                 type="button"
                 name="land_success"
                 onClick={(e) => props.onClickHandler(e, state.id)}
@@ -79,6 +82,6 @@ const Filters = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default Filters;
